@@ -3,6 +3,7 @@ import CustomerLayout from "../layouts/CustomerLayot";
 import HomePage from "../pages/HomePage";
 import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";
+import PatientHomePage from "../pages/PatientHomePage";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
                 <Route index element={<HomePage />} />
                 <Route path="bejelentkezes" element={<LoginPage />} />
                 <Route path="regisztracio" element={<RegisterPage />} />
+                <Route path="patient" element={<PatientHomePage />} />
 
             </Route>
         </Routes>
