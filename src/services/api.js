@@ -12,9 +12,19 @@ export const getDoctors = () => {
   return api.get("/doctors");
 };
 
+// ---- AUTH ----
+export const getAuthHeaders = () => {
+  const token = localStorage.getItem("token");
+
+  return {
+    Authorization: `Bearer ${token}`,
+  };
+};
+
+export default api;
+
+
 // KÉSŐBB IDE JÖN:
 // export const login = (data) => api.post("/login", data);
 // export const getAppointments = () => api.get("/appointments");
 // export const getPatients = () => api.get("/patients");
-
-export default api;

@@ -1,16 +1,19 @@
 import React from "react";
-import "./PatientHomePage.css";
-import Sidebar from "../components/layout/Sidebar";
-import Header from "../components/layout/Header";
-import ServiceCard from "../components/cards/ServiceCard";
+import "./css/PatientHomePage.css";
 
 const PatientHomePage = () => {
   return (
     <div className="patient-home-container">
-      <Sidebar />
+      
+      <aside className="sidebar">
+        Sidebar tartalom
+      </aside>
 
       <main className="main-content">
-        <Header />
+        
+        <header className="header">
+          Header tartalom
+        </header>
 
         <section className="welcome-section">
           <h1>Üdvözlő szöveg</h1>
@@ -21,15 +24,16 @@ const PatientHomePage = () => {
           <h2>Szolgáltatásaink:</h2>
 
           <div className="card-container">
-            <ServiceCard title="Időpont foglalás" />
-            <ServiceCard title="GYIK" />
-            <ServiceCard title="Dokumentumok" />
+            <div className="service-card">Időpont foglalás</div>
+            <div className="service-card">GYIK</div>
+            <div className="service-card">Dokumentumok</div>
           </div>
         </section>
 
         <footer className="footer-info">
           elérhetőségek, social felületek, helyszín
         </footer>
+
       </main>
     </div>
   );

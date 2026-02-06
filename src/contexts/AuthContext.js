@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { myAxios, getAuthHeaders } from "../services/api";
+import api, { getAuthHeaders } from "../services/api";
 
 export const AuthContext = createContext();
 
@@ -13,7 +13,7 @@ export function AuthProvider({ children }) {
     setLoading(true);
     setServerError(null);
 
-    myAxios
+    api
       .post("/users/login", adat)
       .then((response) => {
         localStorage.setItem("token", response.data.token);
@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
     setLoading(true);
     setServerError(null);
 
-    myAxios
+    api
       .post("/users/register", adat)
       .then(() => {
         window.location.href = "/login";
@@ -62,7 +62,7 @@ export function AuthProvider({ children }) {
     setToken(savedToken);
     setLoading(true);
 
-    myAxios
+    api
       .get("/users/me", { headers: getAuthHeaders() })
       .then((response) => {
         setUser(response.data);
